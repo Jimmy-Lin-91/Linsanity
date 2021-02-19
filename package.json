@@ -1,0 +1,38 @@
+{
+  "name": "linsanity",
+  "version": "1.0.0",
+  "description": "Website designed by yours truly for yours truly.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "build": "webpack --watch",
+    "watch": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimmy-Lin-91/Linsanity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jimmy-Lin-91/Linsanity/issues"
+  },
+  "homepage": "https://github.com/Jimmy-Lin-91/Linsanity#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.23.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.5.0"
+  }
+}

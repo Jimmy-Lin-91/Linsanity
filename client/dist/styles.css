@@ -1,0 +1,98 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+.omega_container {
+max-width: 1300px;
+margin: auto;
+height: 100%;
+padding-left: 50px;
+padding-right: 50px;
+background: radial-gradient(silver,rgb(165, 165, 165));
+}
+
+
+#nav {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+padding: 20px;
+}
+
+#nav li {
+list-style-type: none;
+padding-left: 30px;
+}
+
+.home_container {
+text-align: center;
+padding-top: 10px;
+}
+.about_container {
+display: flex;
+flex-direction: row;
+justify-content:space-around;
+padding-top: 30px;
+}
+.photo {
+width: 70%;
+opacity: 75%;
+padding-left: 100px;
+padding-bottom: 80px;
+}
+#about {
+padding-top: 10px;
+padding-right: 130px;
+text-shadow: 5px;
+line-height: 20px;
+}
+.description_1{
+position: relative;
+color: rgb(66, 66, 66);
+font-style: italic;
+}
+.btn{
+display: inline-block;
+background: radial-gradient(white, rgb(150, 150, 150));
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 10px;
+transition: background 0.5s;
+}
+.btn:hover {
+background: #d6d6d6;
+}
+
+#fade-in {
+animation: fadeIn ease 2s;
+-webkit-animation: fadeIn ease 2s;
+-moz-animation: fadeIn ease 2s;
+-o-animation: fadeIn ease 2s;
+-ms-animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
