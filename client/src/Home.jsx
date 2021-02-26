@@ -3,7 +3,7 @@ import React from 'react';
 var Home = () => {
   return (
     <div className="home_container">
-      <div>
+      <div className="home_info">
         <h1 className="title">Jimmy Lin</h1>
         <h4 className="front_end">Front End: </h4>
         <h4>React | React Native | HTML | CSS</h4>
