@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
   }
+  //use componentDidMount() to render loading until state is updated with 'accept';
   render() {
     return(
       <Router>
