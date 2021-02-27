@@ -1,8 +1,11 @@
 import React from 'react';
 
-var Loading = () => {
+var Loading = ({handleAccept}) => {
   return (
-    <h3>Incoming transmission...</h3>
+    <div className="typewriter">
+      <p>Incoming transmission...  </p>
+      <button onClick={handleAccept} className="hailing_button">Accept</button>
+    </div>
   )
 };
 
