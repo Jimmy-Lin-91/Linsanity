@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 var Home = () => {
-  var textArr = ["Front End: "];
-
   return (
     <div className="home_container">
       <div className="home_info">
