@@ -9,7 +9,7 @@ import Loading from './Loading.jsx';
 // const key = require('../sound/SingleKeyPress.wav');
 import bgm from '../dist/sound/BackgroundMusic.wav';
 import typing from '../dist/sound/typing.wav';
-import Key from '../dist/sound/SingleKeyPress.wav';
+import key from '../dist/sound/SingleKeyPress.wav';
 
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
@@ -28,15 +28,27 @@ class App extends React.Component {
   togglePlay() {
     this.setState({
       sound: !this.state.sound
-    })
+    });
+    if (!this.state.sound) {
+      this.bgmSound.play();
+    } else {
+      this.bgmSound.pause();
+    }
+  }
+  componentDidMount(){
+    this.keySound = new Audio(key);
+    this.typingSound = new Audio(typing);
+    this.bgmSound = new Audio(bgm);
   }
   playKeySound () {
-    const keySound = new Audio (Key);
-    const audioPromise = keySound.play();
+     this.keySound.play();
+  }
+  playBgmSound () {
+    let audioPromise = this.bgmSound.play();
     if (audioPromise !== undefined) {
       audioPromise
-        .then(_ => {
-          console.log('Beep!!');
+        .then(_=> {
+          console.log('BGM playing')
         })
         .catch(err => {
           console.info(err);
@@ -48,10 +60,19 @@ class App extends React.Component {
       hailing: true
     })
   }
-  //use componentDidMount() to render loading until state is updated with 'accept';
+
   render() {
-      return(
-        <Router>
+    let {sound} = this.state;
+    const renderSoundButton = () => {
+      if (!sound) {
+        return <button className="sound_button" onClick={() => this.togglePlay()}>Enable Sound</button>
+      } else {
+        return <button className="sound_button" onClick={() => this.togglePlay()}>Enable Stealth</button>
+      }
+    }
+    const audioConditionalRender = () => {
+      if (!this.state.sound) {
+        return (
             <div>
               <nav className="nav_container">
                 <ul className="nav">
@@ -60,15 +81,6 @@ class App extends React.Component {
                   className="link" to="/">Headquarters</Link>
                 </li>
                 <div>
-                  { if (!this.state.sound) {
-                    return (
-                      <button onClick={() => this.togglePlay()}>Dramatics</button>
-                    )
-                  } else {
-                    return (
-                      <button onClick={() => this.togglePlay()}>Kill The Beat</button>
-                    )
-                  }}
                 </div>
                 <li>
                   <Link
@@ -80,11 +92,41 @@ class App extends React.Component {
                 </li>
                 </ul>
               </nav>
+              {renderSoundButton()}
             </div>
-
+        )
+      } else {
+        return (
+          <div>
+          <nav className="nav_container">
+            <ul className="nav">
+            <li>
+              <Link
+              className="link" to="/" onClick={this.playKeySound}>Headquarters</Link>
+            </li>
+            <div>
+            </div>
+            <li>
+              <Link
+              className="link" to="/explorer" onClick={this.playKeySound}>Explorer</Link>
+            </li>
+            <li>
+              <Link
+              className="link" to="/projects" onClick={this.playKeySound}>Projects</Link>
+            </li>
+            </ul>
+          </nav>
+          {renderSoundButton()}
+        </div>
+        )
+      }
+    }
+      return(
+        <Router>
+            {audioConditionalRender()}
             <Switch>
               <Route path='/explorer'>
-                <Explorer hailing={this.state.hailing} handleAccept={this.handleAccept}/>
+                <Explorer hailing={this.state.hailing} handleAccept={this.handleAccept} playKeySound={this.playKeySound}/>
               </Route>
               <Route path='/projects'>
                 <Projects />

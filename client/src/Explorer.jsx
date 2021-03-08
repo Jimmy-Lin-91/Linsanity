@@ -2,11 +2,11 @@ import React from 'react';
 import Loading from './Loading.jsx';
 
 var Explorer = (props) => {
-  const {hailing, handleAccept} = props;
+  const {hailing, handleAccept, playKeySound} = props;
   if (!hailing) {
     return (
       <div className="hailing">
-        <Loading handleAccept={props.handleAccept} hailing={props.hailing}/>
+        <Loading handleAccept={props.handleAccept} playKeySound={playKeySound}hailing={props.hailing}/>
       </div>
     )
   } else {

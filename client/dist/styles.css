@@ -1,8 +1,8 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -14,23 +14,27 @@ body{
   align-items: center;
 }
 .nav_container {
-max-width: 250px;
-max-height: 50px;
+  max-width: 250px;
+  max-height: 50px;
 }
 .nav{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nav li {
-padding-right: 10px;
-list-style-type: none;
+  padding-right: 10px;
+  list-style-type: none;
 }
 .link {
   position: relative;
   color: rgba(255, 255, 255, 0.787);
   text-decoration: none;
+}
+
+.sound_button:hover {
+  box-shadow: 7px 7px darken(#e74c3c, 20%);
 }
 
 .link:before{
@@ -49,9 +53,8 @@ list-style-type: none;
   width: 100%;
 }
 .home_container {
-padding-top: 10px;
-overflow: hidden;
-
+  padding-top: 10px;
+  overflow: hidden;
 }
 .home_info {
   padding-top: 10px;
@@ -71,16 +74,21 @@ overflow: hidden;
   max-height: 14.4px;
 }
 
-.hailing_button{
+.hailing_button, .sound_button{
   margin-top: 20px;
+  text-decoration: none;
   background: transparent;
   height: 25px;
   content: ' ';
-  width: 50px;
+  width: 100px;
   position: relative;
   box-sizing: border-box;
   transition: all .7s ease;
   border: 1px  rgba(133, 240, 107, 0.561) solid;
+}
+.sound_button:hover{
+  border-radius: 20px;
+  color: white;
 }
 .hailing_button:hover{
   border-radius: 20px;
@@ -173,35 +181,35 @@ max-width: 40%;
 border-radius: 50px 0px 50px 0px;
 }
 #fade-in {
-animation: fadeIn ease 4s;
--webkit-animation: fadeIn ease 4s;
--moz-animation: fadeIn ease 4s;
--o-animation: fadeIn ease 4s;
--ms-animation: fadeIn ease 4s;
+  animation: fadeIn ease 4s;
+  -webkit-animation: fadeIn ease 4s;
+  -moz-animation: fadeIn ease 4s;
+  -o-animation: fadeIn ease 4s;
+  -ms-animation: fadeIn ease 4s;
 }
 @keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 @-moz-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 @-webkit-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 @-o-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 @-ms-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 
