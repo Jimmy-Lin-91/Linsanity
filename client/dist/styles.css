@@ -65,7 +65,7 @@ body{
 .typewriter p{
   margin-top: 50px;
   color:rgba(133, 240, 107, 0.561);
-  animation: typewriter 3.5s steps(20, end);
+  animation: typewriter 2s steps(20, end);
   border-right: 2px black solid;
   font-size: 12px;
   overflow: hidden;
@@ -75,6 +75,19 @@ body{
 }
 
 .hailing_button, .sound_button{
+  margin-top: 20px;
+  text-decoration: none;
+  background: transparent;
+  height: 25px;
+  content: ' ';
+  width: 60px;
+  position: relative;
+  box-sizing: border-box;
+  transition: all .7s ease;
+  border: 1px  rgba(133, 240, 107, 0.561) solid;
+}
+.sound_button{
+  border-radius: 20px;
   margin-top: 20px;
   text-decoration: none;
   background: transparent;

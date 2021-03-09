@@ -24,6 +24,9 @@ class App extends React.Component {
     this.handleAccept = this.handleAccept.bind(this);
     this.playKeySound = this.playKeySound.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
+    this.playTypingSoundHailing = this.playTypingSoundHailing.bind(this);
+    this.playTypingSound = this.playTypingSound.bind(this);
+    this.playTypingSoundExplorer = this.playTypingSoundExplorer.bind(this);
   }
   togglePlay() {
     this.setState({
@@ -39,6 +42,29 @@ class App extends React.Component {
     this.keySound = new Audio(key);
     this.typingSound = new Audio(typing);
     this.bgmSound = new Audio(bgm);
+  }
+  playTypingSoundHailing() {
+    this.typingSound.play();
+    setTimeout(() => {
+      this.typingSound.pause();
+      this.typingSound.currentTime = 0;
+    }, 1500)
+  }
+  playTypingSound()  {
+    this.typingSound.play();
+    setTimeout(() => {
+      this.typingSound.pause();
+      this.typingSound.currentTime = 0;
+    }, 3250)
+  }
+  playTypingSoundExplorer() {
+    setTimeout(() => {
+      this.typingSound.play()
+    }, 1500);
+    setTimeout(() => {
+      this.typingSound.pause();
+      this.typingSound.currentTime = 0;
+    }, 4500)
   }
   playKeySound () {
      this.keySound.play();
@@ -126,7 +152,16 @@ class App extends React.Component {
             {audioConditionalRender()}
             <Switch>
               <Route path='/explorer'>
-                <Explorer hailing={this.state.hailing} handleAccept={this.handleAccept} playKeySound={this.playKeySound}/>
+                <Explorer
+                hailing={this.state.hailing}
+                handleAccept={this.handleAccept}
+                playKeySound={this.playKeySound}
+                typingSound={this.typingSound}
+                sound={this.state.sound}
+                playTypingSound={this.playTypingSound}
+                playTypingSoundHailing={this.playTypingSoundHailing}
+                playTypingSoundExplorer={this.playTypingSoundExplorer}
+                />
               </Route>
               <Route path='/projects'>
                 <Projects />
