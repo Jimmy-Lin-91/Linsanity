@@ -3,14 +3,9 @@ import Home from './Home.jsx';
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
 import Explorer from './Explorer.jsx';
-import Loading from './Loading.jsx';
-// const bgm = require('../sound/BackgroundMusic.wav');
-// const typing = require('../sound/typing.wav');
-// const key = require('../sound/SingleKeyPress.wav');
 import bgm from '../dist/sound/BackgroundMusic.wav';
 import typing from '../dist/sound/typing.wav';
 import key from '../dist/sound/SingleKeyPress.wav';
-
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 
@@ -21,6 +16,7 @@ class App extends React.Component {
       hailing: false,
       sound: false,
     }
+
     this.handleAccept = this.handleAccept.bind(this);
     this.playKeySound = this.playKeySound.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
@@ -55,16 +51,18 @@ class App extends React.Component {
     setTimeout(() => {
       this.typingSound.pause();
       this.typingSound.currentTime = 0;
-    }, 3250)
+    }, 1300)
   }
   playTypingSoundExplorer() {
-    setTimeout(() => {
-      this.typingSound.play()
-    }, 1500);
-    setTimeout(() => {
-      this.typingSound.pause();
-      this.typingSound.currentTime = 0;
-    }, 4500)
+    if (this.state.sound) {
+      setTimeout(() => {
+        this.typingSound.play()
+      }, 1750);
+      setTimeout(() => {
+        this.typingSound.pause();
+        this.typingSound.currentTime = 0;
+      }, 4000)
+    }
   }
   playKeySound () {
      this.keySound.play();
@@ -86,7 +84,6 @@ class App extends React.Component {
       hailing: true
     })
   }
-
   render() {
     let {sound} = this.state;
     const renderSoundButton = () => {
@@ -153,14 +150,16 @@ class App extends React.Component {
             <Switch>
               <Route path='/explorer'>
                 <Explorer
-                hailing={this.state.hailing}
                 handleAccept={this.handleAccept}
-                playKeySound={this.playKeySound}
+                hailing={this.state.hailing}
                 typingSound={this.typingSound}
                 sound={this.state.sound}
                 playTypingSound={this.playTypingSound}
                 playTypingSoundHailing={this.playTypingSoundHailing}
                 playTypingSoundExplorer={this.playTypingSoundExplorer}
+                playKeySound={this.playKeySound}
+                addNewLine={this.addNewLine}
+                removeOldLine={this.removeOldLine}
                 />
               </Route>
               <Route path='/projects'>

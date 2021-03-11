@@ -64,7 +64,7 @@ body{
 }
 .typewriter p{
   margin-top: 50px;
-  color:rgba(133, 240, 107, 0.561);
+  color:darkturquoise;
   animation: typewriter 2s steps(20, end);
   border-right: 2px black solid;
   font-size: 12px;
@@ -84,7 +84,7 @@ body{
   position: relative;
   box-sizing: border-box;
   transition: all .7s ease;
-  border: 1px  rgba(133, 240, 107, 0.561) solid;
+  border: 1px  darkturquoise solid;
 }
 .sound_button{
   border-radius: 20px;
@@ -97,7 +97,7 @@ body{
   position: relative;
   box-sizing: border-box;
   transition: all .7s ease;
-  border: 1px  rgba(133, 240, 107, 0.561) solid;
+  border: 1px  darkturquoise solid;
 }
 .sound_button:hover{
   border-radius: 20px;
@@ -113,7 +113,7 @@ body{
   max-height: 20px;
   max-width: 100px;
   border-right: 2px solid black;
-  color: rgba(133, 240, 107, 0.561);
+  color: darkturquoise;
   animation: typewriter 2s steps(60, end) 1s 1 both;
   overflow: hidden;
 }
@@ -122,7 +122,7 @@ body{
   max-height: 20px;
   max-width: 100px;
   border-right: 2px solid black;
-  color: rgba(133, 240, 107, 0.561);
+  color: darkturquoise;
   animation: typewriter 2s steps(60, end) 1s 1 normal both;
   overflow: hidden;
 }
@@ -131,7 +131,7 @@ body{
   max-height: 20px;
   max-width: 200px;
   border-right: 2px solid black;
-  color: rgba(133, 240, 107, 0.561);
+  color: darkturquoise;
   animation: typewriter 2s steps(70, end) 2s 1 normal both;
   overflow: hidden;
 }
@@ -139,7 +139,7 @@ body{
   max-height: 20px;
   max-width: 250px;
   border-right: 2px solid black;
-  color: rgba(133, 240, 107, 0.561);
+  color: darkturquoise;
   animation: typewriter 2s steps(70, end) 2s 1 normal both;
   overflow: hidden;
 }
@@ -158,40 +158,66 @@ body{
 
 @keyframes blinky{
   from, to {border-color: black}
-  50% {border-color:rgba(133, 240, 107, 0.561)}
+  50% {border-color:darkturquoise}
 }
 .about_container {
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
-  padding-top: 30px;
-  padding-left: 0;
-  padding-right: 0;
+  justify-content:space-between;
+  padding: 30px;
   margin: 0;
+  width: 100%;
+
 }
 .col-1 {
   border: 2px solid rgba(133, 240, 107, 0.561);
-  background-color: rgba(128, 128, 128, 0.671);
+  background-color:rgba(0, 206, 209, 0.513);
   text-indent: 50px;
   text-align: left;
-  height: 400px;
-  width: 400px;
+  max-width: 30%;
+  max-height: 200px;
   padding: 5px;
 }
+.line {
+  border: 2px solid black;
+}
 .col-2{
-  padding-left: 50px;
+  width: 30%;
+}
+.col-3 {
+  width: 30%;
 }
 .description_1{
   height: 100%;
   width: 100%;
   border-right: 2px solid black;
-  color: rgba(133, 240, 107, 0.561);
-  animation: typewriter 2s steps(70, end) 2s 1 normal both;
-  overflow: hidden;
+  color: black;
+}
+.description_1_container{
+  max-height: 100%;
+  overflow: scroll;
+}
+.photo_container {
+  align-items: center;
+  justify-content: center;
+}
+.photo_container_outeroutline {
+  width: 90%;
+  background: rgba(0, 0, 0, 0.507);
+}
+.photo_container_inneroutline{
+  width: 100%;
+  border: 15px dashed rgba(128,0,0,0.1);
+  background:
+    linear-gradient(to top,    rgb(47, 47, 47), grey 5px, transparent 10px),
+    linear-gradient(to right,  rgb(47, 47, 47), grey 5px, transparent 10px),
+    linear-gradient(to bottom, rgb(47, 47, 47), grey 5px, transparent 10px),
+    linear-gradient(to left,   rgb(47, 47, 47), grey 5px, transparent 10px);
+  background-origin: border-box;
 }
 .photo {
-max-width: 40%;
-border-radius: 50px 0px 50px 0px;
+max-width: 100%;
+padding: 20px;
 }
 #fade-in {
   animation: fadeIn ease 4s;
@@ -243,7 +269,7 @@ border-radius: 50px 0px 50px 0px;
   }
   .about_container{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
   }
   .photo{
     max-width: 40%;
