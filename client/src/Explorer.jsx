@@ -12,9 +12,8 @@ var Explorer = (props) => {
     playTypingSound,
     sound,
     playTypingSoundExplorer,
-    playKeySound,
     script,
-    addNewLine
+    playStaticSound
   } = props;
   if (!hailing && sound) {
       return (
@@ -23,7 +22,6 @@ var Explorer = (props) => {
             sound={sound}
             handleAccept={handleAccept}
             playTypingSound={playTypingSound}
-            playKeySound={playKeySound}
           />
         </div>
       )
@@ -33,14 +31,14 @@ var Explorer = (props) => {
           <LoadingWithoutSound handleAccept={handleAccept}/>
         </div>
       )
-    } else {
+    } else if (hailing && !sound) {
       return (
         <div className="about-container">
             <div className="col-1">
               <StatusPanel />
             </div>
               <div className="col-2" id="fade-in">
-                <Story addNewLine={addNewLine}/>
+                <Story/>
               </div>
             <div className="col-3" id="fade-in">
               <div className="photo-container">
@@ -53,7 +51,29 @@ var Explorer = (props) => {
             </div>
         </div>
       )
-  }
+    } else {
+      return (
+        <div className="about-container">
+            <div className="col-1">
+              {playStaticSound()}
+              <StatusPanel />
+            </div>
+              <div className="col-2" id="fade-in">
+                <Story/>
+              </div>
+            <div className="col-3" id="fade-in">
+              <div className="photo-container">
+                <div className="photo-container-outeroutline">
+                  <div className="photo-container-inneroutline">
+                    <img src={'https://i.imgur.com/Tf72CGG.jpg'} className="photo"></img>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      )
+    }
+
 };
 
 export default Explorer;

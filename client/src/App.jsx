@@ -5,7 +5,7 @@ import Contact from './Contact.jsx';
 import Explorer from './Explorer.jsx';
 import bgm from '../dist/sound/BackgroundMusic.wav';
 import typing from '../dist/sound/typing.wav';
-import key from '../dist/sound/SingleKeyPress.wav';
+import staticSound from '../dist/sound/Static.wav'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 
@@ -18,11 +18,11 @@ class App extends React.Component {
     }
 
     this.handleAccept = this.handleAccept.bind(this);
-    this.playKeySound = this.playKeySound.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
     this.playTypingSoundHailing = this.playTypingSoundHailing.bind(this);
     this.playTypingSound = this.playTypingSound.bind(this);
     this.playTypingSoundExplorer = this.playTypingSoundExplorer.bind(this);
+    this.playStaticSound = this.playStaticSound.bind(this);
   }
   togglePlay() {
     this.setState({
@@ -35,9 +35,15 @@ class App extends React.Component {
     }
   }
   componentDidMount(){
-    this.keySound = new Audio(key);
     this.typingSound = new Audio(typing);
     this.bgmSound = new Audio(bgm);
+    this.staticSound = new Audio(staticSound);
+  }
+  playStaticSound() {
+    this.staticSound.play();
+    setTimeout(() => {
+      this.staticSound.pause();
+    }, 4500)
   }
   playTypingSoundHailing() {
     this.typingSound.play();
@@ -63,9 +69,6 @@ class App extends React.Component {
         this.typingSound.currentTime = 0;
       }, 4000)
     }
-  }
-  playKeySound () {
-     this.keySound.play();
   }
   playBgmSound () {
     let audioPromise = this.bgmSound.play();
@@ -125,17 +128,17 @@ class App extends React.Component {
             <ul className="nav">
             <li>
               <Link
-              className="link" to="/" onClick={this.playKeySound}>Headquarters</Link>
+              className="link" to="/" >Headquarters</Link>
             </li>
             <div>
             </div>
             <li>
               <Link
-              className="link" to="/explorer" onClick={this.playKeySound}>Explorer</Link>
+              className="link" to="/explorer" >Explorer</Link>
             </li>
             <li>
               <Link
-              className="link" to="/projects" onClick={this.playKeySound}>Projects</Link>
+              className="link" to="/projects" >Projects</Link>
             </li>
             </ul>
           </nav>
@@ -157,16 +160,14 @@ class App extends React.Component {
                 playTypingSound={this.playTypingSound}
                 playTypingSoundHailing={this.playTypingSoundHailing}
                 playTypingSoundExplorer={this.playTypingSoundExplorer}
-                playKeySound={this.playKeySound}
-                addNewLine={this.addNewLine}
-                removeOldLine={this.removeOldLine}
+                playStaticSound={this.playStaticSound}
                 />
               </Route>
               <Route path='/projects'>
                 <Projects />
               </Route>
               <Route path='/'>
-                <Home/>
+                <Home sound={this.state.sound} playTypingSound={this.playTypingSound}/>
               </Route>
             </Switch>
         </Router>

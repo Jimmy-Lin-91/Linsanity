@@ -1,9 +1,8 @@
 import React from 'react';
 
-var LoadingWithSound = ({ sound, handleAccept, playTypingSound, playKeySound }) => {
+var LoadingWithSound = ({ sound, handleAccept, playTypingSound}) => {
   var acceptAndSound = () => {
     handleAccept();
-    playKeySound();
   }
     return (
       <div className="typewriter">

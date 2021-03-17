@@ -4,7 +4,7 @@ class Story extends React.Component {
   constructor(props) {
     super(props),
     this.state= {
-      chatBox: ['Connection unstable...']
+      chatBox: []
     }
     this.addNewLine = this.addNewLine.bind(this);
     this.delayAddingLine = this.delayAddingLine.bind(this);
@@ -34,21 +34,30 @@ class Story extends React.Component {
       if (this.state.chatBox.length === 8) {
         clearInterval(intervalId);
       }
-    }, 1000)
+    }, 3700)
   };
 
+
   render() {
-    return (
+    if (this.state.chatBox.length === 0) {
+      return (
         <div className="message-box">
-          {this.state.chatBox.map((line, i) => {
-            return (
-                <div className="message">
-                  {line}
-                </div>
-            )
-          })}
+          <p className="message">Decoding message...</p>
         </div>
-    )
+      )
+    } else {
+      return (
+          <div className="message-box">
+            {this.state.chatBox.map((line, i) => {
+              return (
+                  <div className="message">
+                    {line}
+                  </div>
+              )
+            })}
+          </div>
+      )
+    }
   }
 }
 

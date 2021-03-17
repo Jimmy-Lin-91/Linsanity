@@ -16,8 +16,6 @@ class StatusPanel extends React.Component {
   handleClick(e) {
     this.setState({
       [e.target.name]: !this.state[e.target.name]
-    }, () => {
-      console.log(this.state);
     })
   }
 
@@ -26,25 +24,42 @@ class StatusPanel extends React.Component {
       <div className="accordion-statusPanel">
         <h4>Status Panel</h4>
         <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne"><button className="accordion-button" name="status">Explorer Profile</button></h2>
-          <div className="accordion-collapse collapse show">
-            <div className="accordion-body">
+          <h2
+          className="accordion-header"
+          id="headingOne">
+            <button
+            className="accordion-button"
+            name="status">Explorer Profile</button></h2>
+          <div
+          className="accordion-collapse collapse show">
+            <div
+            className="accordion-body">
               <Status />
             </div>
           </div>
         </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne"><button className="accordion-button">Current Atmosphere</button></h2>
-          <div className="accordion-collapse collapse show">
-            <div className="accordion-body">
+        <div
+        className="accordion-item">
+          <h2
+          className="accordion-header"
+          id="headingOne"><button className="accordion-button">Current Atmosphere</button></h2>
+          <div
+          className="accordion-collapse collapse show">
+            <div
+            className="accordion-body">
               <Atmosphere />
             </div>
           </div>
         </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne"><button className="accordion-button">Photos</button></h2>
-          <div className="accordion-collapse collapse show">
-            <div className="accordion-body">
+        <div
+        className="accordion-item">
+          <h2
+          className="accordion-header"
+          id="headingOne"><button className="accordion-button">Photos</button></h2>
+          <div
+          className="accordion-collapse collapse show">
+            <div
+            className="accordion-body">
               <Photos />
             </div>
           </div>
