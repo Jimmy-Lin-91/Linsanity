@@ -88,16 +88,16 @@ class App extends React.Component {
     let {sound} = this.state;
     const renderSoundButton = () => {
       if (!sound) {
-        return <button className="sound_button" onClick={() => this.togglePlay()}>Enable Sound</button>
+        return <button className="sound-button" onClick={() => this.togglePlay()}>Enable Sound</button>
       } else {
-        return <button className="sound_button" onClick={() => this.togglePlay()}>Enable Stealth</button>
+        return <button className="sound-button" onClick={() => this.togglePlay()}>Enable Stealth</button>
       }
     }
     const audioConditionalRender = () => {
       if (!this.state.sound) {
         return (
             <div>
-              <nav className="nav_container">
+              <nav className="nav-container">
                 <ul className="nav">
                 <li>
                   <Link
@@ -121,7 +121,7 @@ class App extends React.Component {
       } else {
         return (
           <div>
-          <nav className="nav_container">
+          <nav className="nav-container">
             <ul className="nav">
             <li>
               <Link

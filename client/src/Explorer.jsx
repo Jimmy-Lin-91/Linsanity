@@ -14,8 +14,7 @@ var Explorer = (props) => {
     playTypingSoundExplorer,
     playKeySound,
     script,
-    addNewLine,
-    removeOldLine
+    addNewLine
   } = props;
   if (!hailing && sound) {
       return (
@@ -36,23 +35,21 @@ var Explorer = (props) => {
       )
     } else {
       return (
-        <div className="about_container">
-            <div className="col-1" id="fade-in">
-              <div className="description_1_container">
-                <Story addNewLine={addNewLine} removeOldLine={removeOldLine}/>
-              </div>
+        <div className="about-container">
+            <div className="col-1">
+              <StatusPanel />
             </div>
-            <div className="col-2" id="fade-in">
-              <div className="photo_container">
-                <div className="photo_container_outeroutline">
-                  <div className="photo_container_inneroutline">
+              <div className="col-2" id="fade-in">
+                <Story addNewLine={addNewLine}/>
+              </div>
+            <div className="col-3" id="fade-in">
+              <div className="photo-container">
+                <div className="photo-container-outeroutline">
+                  <div className="photo-container-inneroutline">
                     <img src={'https://i.imgur.com/Tf72CGG.jpg'} className="photo"></img>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-3">
-              <StatusPanel />
             </div>
         </div>
       )

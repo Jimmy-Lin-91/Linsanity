@@ -13,7 +13,7 @@ body{
   display: flex;
   align-items: center;
 }
-.nav_container {
+.nav-container {
   max-width: 250px;
   max-height: 50px;
 }
@@ -33,7 +33,7 @@ body{
   text-decoration: none;
 }
 
-.sound_button:hover {
+.sound-button:hover {
   box-shadow: 7px 7px darken(#e74c3c, 20%);
 }
 
@@ -52,11 +52,11 @@ body{
   visibility: visible;
   width: 100%;
 }
-.home_container {
+.home-container {
   padding-top: 10px;
   overflow: hidden;
 }
-.home_info {
+.home-info {
   padding-top: 10px;
   max-height: 100%;
   line-height: 20px;
@@ -74,9 +74,10 @@ body{
   max-height: 14.4px;
 }
 
-.hailing_button, .sound_button{
+.hailing-button{
   margin-top: 20px;
   text-decoration: none;
+  outline: none;
   background: transparent;
   height: 25px;
   content: ' ';
@@ -86,8 +87,7 @@ body{
   transition: all .7s ease;
   border: 1px  darkturquoise solid;
 }
-.sound_button{
-  border-radius: 20px;
+.sound-button, .toggle-modal-button{
   margin-top: 20px;
   text-decoration: none;
   background: transparent;
@@ -99,13 +99,20 @@ body{
   transition: all .7s ease;
   border: 1px  darkturquoise solid;
 }
-.sound_button:hover{
+.sound-button:hover{
   border-radius: 20px;
   color: white;
 }
-.hailing_button:hover{
+.hailing-button:hover{
   border-radius: 20px;
   color: white;
+}
+.toggle-modal-button:hover{
+  border-radius: 20px;
+  color: white;
+}
+.toggle-modal-button {
+  animation: fadeIn 1s
 }
 
 
@@ -127,40 +134,27 @@ body{
   overflow: hidden;
 }
 
-.home_languages1{
+.home-languages1, .home-languages2{
   max-height: 20px;
   max-width: 200px;
-  border-right: 2px solid black;
   color: darkturquoise;
   animation: typewriter 2s steps(70, end) 2s 1 normal both;
   overflow: hidden;
 }
-.home_languages2{
-  max-height: 20px;
+.home-languages2{
   max-width: 250px;
-  border-right: 2px solid black;
-  color: darkturquoise;
-  animation: typewriter 2s steps(70, end) 2s 1 normal both;
-  overflow: hidden;
 }
-
 
 .title {
   color: rgb(255, 255, 255);
   padding-bottom: 10px;
 }
 
-
 @keyframes typewriter{
   from{width: 0;}
   to{width: 100%;}
 }
-
-@keyframes blinky{
-  from, to {border-color: black}
-  50% {border-color:darkturquoise}
-}
-.about_container {
+.about-container {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
@@ -169,50 +163,86 @@ body{
   width: 100%;
 
 }
-.col-1 {
-  border: 2px solid rgba(133, 240, 107, 0.561);
-  background-color:rgba(0, 206, 209, 0.513);
-  text-indent: 50px;
-  text-align: left;
-  max-width: 30%;
-  max-height: 200px;
-  padding: 5px;
-}
-.line {
-  border: 2px solid black;
-}
 .col-2{
+  height: 200px;
+  width: 200px;
+  overflow: scroll;
+  align-content: center;
+}
+.message-box {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.message {
+  position: relative;
+  font-size: 12px;
+  border: 2px solid darkturquoise;
+  border-radius: 12px;
+  padding: 5px;
+  color: darkturquoise;
+  border-bottom-right-radius: 0px;
+  animation: fade-out 0s 5s forwards;
+  -moz-animation: fade-out 0s ease-in 1s forwards;
+  -o-animation: fade-out 0s ease-in 1s forwards;
+  animation: fade-out 0s ease-in 1s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes fade-out {
+  from {
+      padding: 0px;
+      visibility:hidden;
+  }
+  to {
+      padding: 0px;
+      display: none;
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+@-webkit-keyframes fade-out {
+  from {
+      visibility:hidden;
+  }
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}
+
+.col-1, .col-2, .col-3{
   width: 30%;
 }
-.col-3 {
-  width: 30%;
-}
-.description_1{
+
+.description-1{
   height: 100%;
   width: 100%;
   border-right: 2px solid black;
   color: black;
 }
-.description_1_container{
-  max-height: 100%;
-  overflow: scroll;
-}
-.photo_container {
+
+.photo-container {
   align-items: center;
   justify-content: center;
 }
-.photo_container_outeroutline {
+.photo-container-outeroutline {
   width: 90%;
   background: rgba(0, 0, 0, 0.507);
 }
-.photo_container_inneroutline{
+.photo-container-inneroutline{
   width: 100%;
   border: 15px dashed rgba(128,0,0,0.1);
   background:
-    linear-gradient(to top,    rgb(47, 47, 47), grey 5px, transparent 10px),
-    linear-gradient(to right,  rgb(47, 47, 47), grey 5px, transparent 10px),
-    linear-gradient(to bottom, rgb(47, 47, 47), grey 5px, transparent 10px),
-    linear-gradient(to left,   rgb(47, 47, 47), grey 5px, transparent 10px);
+    linear-gradient(to top,   darkturquoise, grey 5px, transparent 10px),
+    linear-gradient(to right,  darkturquoise, grey 5px, transparent 10px),
+    linear-gradient(to bottom, darkturquoise, grey 5px, transparent 10px),
+    linear-gradient(to left,   darkturquoise, grey 5px, transparent 10px);
   background-origin: border-box;
 }
 .photo {
@@ -251,10 +281,45 @@ padding: 20px;
   100% {opacity:1;}
 }
 
+.accordion-statusPanel{
+  border: 2px solid darkturquoise;
+  width: 100%;
+  height: 40%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.accordion-statusPanel h4{
+  color: darkturquoise;
+  border-bottom: 1px solid darkturquoise;
+}
+.accordion-item {
+  border-bottom: darkturquoise 1px solid;
+}
+.accordion-button {
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  color: darkturquoise;
+}
+.accordion-collapse {
+  display: none;
+}
+.accordion-collapse:after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 
 /*iPad Screens*/
 @media only screen and (max-width: 992px) {
-  .home_info h4,.front-end, .back_end {
+  .home-info h4,.front-end, .back-end {
     font-size: 14px;
   }
 }
@@ -264,17 +329,18 @@ padding: 20px;
   body {
     background-color: olive;
   }
-  .home_info h4,.front-end, .back_end {
+  .home-info h4,.front-end, .back-end {
     font-size: 12px;
   }
-  .about_container{
+  .about-container{
+    width: 100%;
     display: flex;
     flex-direction: row;
   }
   .photo{
     max-width: 40%;
   }
-  .description_1{
+  .description-1{
     overflow: scroll;
     max-height: 200px;
   }

@@ -5,7 +5,7 @@ const LoadingWithoutSound = ({ handleAccept }) => {
   return (
     <div className="typewriter">
       <p>Incoming transmission...  </p>
-      <button onClick={handleAccept}className="hailing_button">Accept</button>
+      <button onClick={handleAccept}className="hailing-button">Accept</button>
     </div>
   )
 }

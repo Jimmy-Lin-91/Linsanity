@@ -9,7 +9,7 @@ var LoadingWithSound = ({ sound, handleAccept, playTypingSound, playKeySound }) 
       <div className="typewriter">
         {playTypingSound()}
         <p>Incoming transmission...  </p>
-        <button onClick={() => acceptAndSound()} className="hailing_button">Accept</button>
+        <button onClick={() => acceptAndSound()} className="hailing-button">Accept</button>
       </div>
     )
 };
