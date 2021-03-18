@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Status = () => {
+const Profile = () => {
 
   return (
-    <div>
+    <div className="accordion-profile" id="fade-in">
       <h7>Explorer Status with race, geolocation, and occupation.</h7>
     </div>
   )
 }
 
-export default Status;
+export default Profile;

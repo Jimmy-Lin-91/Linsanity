@@ -1,14 +1,16 @@
 import React from 'react';
-import Status from './Status.jsx';
-import Atmosphere from './Atmosphere.jsx';
-import Photos from './Photos.jsx';
+import Profile from './Components/Profile.jsx';
+import Atmosphere from './Components/Atmosphere.jsx';
+import Photos from './Components/Photos.jsx';
+import { FaChevronRight } from 'react-icons/fa';
+
 class StatusPanel extends React.Component {
   constructor() {
     super(),
     this.state= {
-      photos: [],
-      status: false,
-      atmpshere: false,
+      marsPhotos: [],
+      profile: false,
+      atmosphere: false,
       photos: false,
     }
     this.handleClick = this.handleClick.bind(this);
@@ -16,55 +18,26 @@ class StatusPanel extends React.Component {
   handleClick(e) {
     this.setState({
       [e.target.name]: !this.state[e.target.name]
-    })
+    });
   }
-
   render() {
     return (
       <div className="accordion-statusPanel">
         <h4>Status Panel</h4>
         <div className="accordion-item">
-          <h2
-          className="accordion-header"
-          id="headingOne">
-            <button
-            className="accordion-button"
-            name="status">Explorer Profile</button></h2>
-          <div
-          className="accordion-collapse collapse show">
-            <div
-            className="accordion-body">
-              <Status />
-            </div>
-          </div>
+            <button className="accordion-button" name="profile" onClick={this.handleClick}>
+              Profile
+              <FaChevronRight className="chevron-right"/>
+            </button>
+            {this.state.profile ? <Profile /> : ""}
         </div>
-        <div
-        className="accordion-item">
-          <h2
-          className="accordion-header"
-          id="headingOne"><button className="accordion-button">Current Atmosphere</button></h2>
-          <div
-          className="accordion-collapse collapse show">
-            <div
-            className="accordion-body">
-              <Atmosphere />
-            </div>
-          </div>
+        <div className="accordion-item">
+            <button className="accordion-button" name="photos" onClick={this.handleClick}>
+              Photos
+              <FaChevronRight className="chevron-right"/>
+            </button>
+            {this.state.photos ? <Photos /> : ""}
         </div>
-        <div
-        className="accordion-item">
-          <h2
-          className="accordion-header"
-          id="headingOne"><button className="accordion-button">Photos</button></h2>
-          <div
-          className="accordion-collapse collapse show">
-            <div
-            className="accordion-body">
-              <Photos />
-            </div>
-          </div>
-        </div>
-
       </div>
     )
   }

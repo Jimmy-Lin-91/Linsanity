@@ -32,12 +32,12 @@ const config = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpe?g|gif)$/,
+                test: /\.(png|jp(e*)g|svg|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
+                            name: 'images/[hash]-[name].[ext]',
                             outputPath: '../images/',
                             publicPath: 'images/',
                             useRelativePaths: true

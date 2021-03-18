@@ -43,7 +43,7 @@ class App extends React.Component {
     this.staticSound.play();
     setTimeout(() => {
       this.staticSound.pause();
-    }, 4500)
+    }, 5500)
   }
   playTypingSoundHailing() {
     this.typingSound.play();
