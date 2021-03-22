@@ -1,17 +1,17 @@
 import React from 'react';
 import Profile from './Components/Profile.jsx';
 import Atmosphere from './Components/Atmosphere.jsx';
-import Photos from './Components/Photos.jsx';
-import { FaChevronRight } from 'react-icons/fa';
-
+import Stats from './Components/Stats.jsx';
+import { BsChevronRight } from 'react-icons/bs';
+import Accordion from './Components/Accordion.jsx';
 class StatusPanel extends React.Component {
   constructor() {
     super(),
     this.state= {
-      marsPhotos: [],
-      profile: false,
-      atmosphere: false,
-      photos: false,
+      marsStats: [],
+      Profile: false,
+      Atmosphere: false,
+      Stats: false,
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -20,24 +20,19 @@ class StatusPanel extends React.Component {
       [e.target.name]: !this.state[e.target.name]
     });
   }
+
   render() {
     return (
       <div className="accordion-statusPanel">
         <h4>Status Panel</h4>
-        <div className="accordion-item">
-            <button className="accordion-button" name="profile" onClick={this.handleClick}>
-              Profile
-              <FaChevronRight className="chevron-right"/>
-            </button>
-            {this.state.profile ? <Profile /> : ""}
-        </div>
-        <div className="accordion-item">
-            <button className="accordion-button" name="photos" onClick={this.handleClick}>
-              Photos
-              <FaChevronRight className="chevron-right"/>
-            </button>
-            {this.state.photos ? <Photos /> : ""}
-        </div>
+          <div>
+            <Accordion handleClick={this.handleClick} pane={"Profile"} paneStatus={this.state.Profile}/>
+            {this.state.Profile ? <Profile /> : ''}
+          </div>
+          <div>
+            <Accordion handleClick={this.handleClick} pane={"Stats"} paneStatus={this.state.Stats}/>
+            {this.state.Stats ? <Stats /> : ''}
+          </div>
       </div>
     )
   }
