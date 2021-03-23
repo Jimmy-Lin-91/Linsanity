@@ -7,7 +7,8 @@ import bgm from '../dist/sound/BackgroundMusic.wav';
 import typing from '../dist/sound/typing.wav';
 import staticSound from '../dist/sound/Static.wav'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-
+import { AiOutlineLinkedin } from 'react-icons/ai';
+import { FiGithub } from 'react-icons/fi';
 
 class App extends React.Component {
   constructor(props){
@@ -119,6 +120,16 @@ class App extends React.Component {
                   <Link
                   className="link" to="/projects">Projects</Link>
                 </li>
+                <li>
+                  <a href="http://linkedin.com/in/linjimmy91" target="blank">
+                    <AiOutlineLinkedin className="linkedin-icon"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Jimmy-Lin-91" target="blank">
+                  <FiGithub className="github-icon"/>
+                  </a>
+                </li>
                 </ul>
               </nav>
               {renderSoundButton()}
@@ -142,6 +153,16 @@ class App extends React.Component {
             <li>
               <Link
               className="link" to="/projects" >Projects</Link>
+            </li>
+            <li>
+              <a href="http://linkedin.com/in/linjimmy91" target="blank">
+                <AiOutlineLinkedin className="linkedin-icon"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Jimmy-Lin-91" target="blank">
+              <FiGithub className="github-icon"/>
+              </a>
             </li>
             </ul>
           </nav>

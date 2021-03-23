@@ -2,6 +2,7 @@ import React from 'react';
 import { BsChevronRight, BsChevronDown } from 'react-icons/bs';
 const Accordion = (props) => {
   const { handleClick, pane, paneStatus} = props;
+
   let renderChevron = () => {
     if (paneStatus) {
       return (

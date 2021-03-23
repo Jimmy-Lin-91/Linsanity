@@ -1,0 +1,5 @@
+Links for Projects Page:
+eCommerce Mock: https://jimmy-lin-91.github.io/eCommerceMock/
+
+Ploober gif:https://media.giphy.com/media/GdFAvyOJ0BsrGs82yq/giphy.gif
+Ploober Repo: https://github.com/Wolf-Of-Call-Street/Ploober-React-Native

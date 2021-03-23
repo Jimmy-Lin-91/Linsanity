@@ -1,6 +1,5 @@
 import React from 'react';
 import Profile from './Components/Profile.jsx';
-import Atmosphere from './Components/Atmosphere.jsx';
 import Stats from './Components/Stats.jsx';
 import { BsChevronRight } from 'react-icons/bs';
 import Accordion from './Components/Accordion.jsx';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import LoadingWithSound from './LoadingWithSound.jsx';
-import LoadingWithoutSound from './LoadingWithoutSound.jsx';
+import LoadingWithSound from './Components/LoadingWithSound.jsx';
+import LoadingWithoutSound from './Components/LoadingWithoutSound.jsx';
 import StatusPanel from './StatusPanel.jsx';
 import Story from './Story.jsx';
 
