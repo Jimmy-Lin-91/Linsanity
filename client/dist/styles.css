@@ -442,33 +442,61 @@ padding: 20px;
   margin-top: 20px;
   overflow: scroll;
 }
-.projects-ploober{
+.projects-ploober, .projects-commerce-container{
   background: rgba(0, 0, 0, 0.781);
   display: flex;
   flex-direction: row;
+  overflow: scroll;
+  padding: 10px;
   justify-content: space-between;
 }
-.projects-ploober p{
+.projects-ploober, .projects-commerce-text p{
   color: darkturquoise;
   font-size: 12px;
+  max-height: 278px;
 }
-
+.ploober-gif {
+  height: 100%;
+}
 .ploober-gif, .ploober-description{
   flex: 1;
 }
-.projects-commerce{
-  width: 800px;
-  height: 350px;
+.projects-carousel-outer{
+  width: 480px;
+  height: auto;
+  padding: 10px;
+  background-color: black;
+  align-items: center;
 }
 .projects-commerce-carousel{
   display: flex;
   flex-direction: row;
   overflow: scroll;
-  width: 30%;
-  height: 30%;
+  width: 350px;
+  height: 240px;
+  margin: auto;
+  padding-top: 20px;
+}
+.projects-commerce-carousel, .projects-commerce-text{
+  flex: 1;
+}
+.projects-container::-webkit-scrollbar{
+  display: none;
+}
+.projects-commerce-carousel::-webkit-scrollbar{
+  display: none;
+}
+.projects-ploober::-webkit-scrollbar{
+  display: none;
+}
+.projects-commerce-container::-webkit-scrollbar{
+  display: none;
 }
 .projects-commerce-carousel-item{
+  width: 350px;
+  height: 200px;
   flex: 1;
+  border: solid 2px black;
 }
 /*iPad Screens*/
 @media only screen and (max-width: 992px) {

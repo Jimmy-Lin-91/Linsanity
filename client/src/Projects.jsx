@@ -2,7 +2,7 @@ import React from 'react';
 import Contact from './Contact.jsx';
 import Accordion from './Components/Accordion.jsx';
 import Ploober from './Components/Ploober.jsx';
-import SystemDesign from './Components/SystemDesign.jsx';
+import Database from './Components/Database.jsx';
 import Commerce from './Components/Commerce.jsx';
 class Projects extends React.Component {
   constructor(props){
@@ -10,7 +10,7 @@ class Projects extends React.Component {
     this.state = {
       Ploober: false,
       Commerce: false,
-      SystemDesign: false
+      Database: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -29,10 +29,6 @@ class Projects extends React.Component {
         <div>
           <Accordion pane={"Commerce"} handleClick={this.handleClick} paneStatus={this.state.Commerce}/>
           {this.state.Commerce ? <Commerce /> : ""}
-        </div>
-        <div>
-          <Accordion pane={"SystemDesign"} handleClick={this.handleClick} paneStatus={this.state.SystemDesign}/>
-          {this.state.SystemDesign ? <SystemDesign /> : ""}
         </div>
       </div>
     )
