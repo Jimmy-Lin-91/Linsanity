@@ -69,7 +69,7 @@ body a {
   margin-top: 50px;
   color:darkturquoise;
   animation: typewriter 2s steps(20, end);
-  border-right: 2px black solid;
+  border-right: 2px rgba(0, 0, 0, 0) solid;
   font-size: 12px;
   overflow: hidden;
 }
@@ -80,6 +80,7 @@ body a {
 .hailing-button{
   margin-top: 20px;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0);
   background: transparent;
   height: 25px;
   content: ' ';
@@ -89,9 +90,10 @@ body a {
   transition: all .7s ease;
   border: 1px  darkturquoise solid;
 }
-.sound-button, .toggle-modal-button{
+.sound-button {
   margin-top: 20px;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0);
   background: transparent;
   height: 25px;
   content: ' ';
@@ -124,7 +126,7 @@ body a {
 .homeText1,.homeText2 {
   max-height: 20px;
   max-width: 100px;
-  border-right: 2px solid black;
+  border-right: 2px solid rgba(0, 0, 0, 0);
   color: darkturquoise;
   animation: typewriter 1.5s steps(60, end) 0.5s 1 both;
   overflow: hidden;
@@ -461,6 +463,9 @@ padding: 20px;
 .ploober-gif, .ploober-description{
   flex: 1;
 }
+.ploober-description{
+  overflow: scroll;
+}
 .projects-carousel-outer{
   width: 480px;
   height: auto;
@@ -492,37 +497,12 @@ padding: 20px;
 .projects-commerce-container::-webkit-scrollbar{
   display: none;
 }
+.ploober-description::-webkit-scrollbar{
+  display: none;
+}
 .projects-commerce-carousel-item{
   width: 350px;
   height: 200px;
   flex: 1;
   border: solid 2px black;
-}
-/*iPad Screens*/
-@media only screen and (max-width: 992px) {
-  .home-info h4,.front-end, .back-end {
-    font-size: 14px;
-  }
-}
-
-/*Mobile screens 600px*/
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: olive;
-  }
-  .home-info h4,.front-end, .back-end {
-    font-size: 12px;
-  }
-  .about-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  .photo{
-    max-width: 40%;
-  }
-  .description-1{
-    overflow: scroll;
-    max-height: 200px;
-  }
 }
