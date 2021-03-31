@@ -6,8 +6,8 @@
 }
 
 body{
-  max-width: 1300px;
   background-image: url('https://i.imgur.com/mclNRKx.jpg');
+  background-attachment: fixed;
   padding: 100px;
   overflow: scroll;
   display: flex;
@@ -32,7 +32,7 @@ body a {
 }
 .link {
   position: relative;
-  color: rgba(255, 255, 255, 0.787);
+  color: rgb(42, 42, 42);
   text-decoration: none;
 }
 
@@ -505,4 +505,11 @@ padding: 20px;
   height: 200px;
   flex: 1;
   border: solid 2px black;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 20px;
+    background-repeat: no-repeat;
+  }
 }
