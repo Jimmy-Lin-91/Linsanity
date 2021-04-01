@@ -13,3 +13,9 @@ Through donations at www.fesliyanstudios.com
 Scripts:
 npm start (backend server)
 npm run build (webpack front end)
+
+In Action: 
+https://youtu.be/RqirsEXGxew
+
+Deployed on Surge:
+Linsanity.surge.sh
