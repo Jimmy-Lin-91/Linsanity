@@ -114,11 +114,11 @@ class App extends React.Component {
                 </div>
                 <li>
                   <Link
-                  className="link" to="/explorer">Explorer</Link>
+                  className="link" to="/projects">Projects</Link>
                 </li>
                 <li>
                   <Link
-                  className="link" to="/projects">Projects</Link>
+                  className="link" to="/explorer">Explorer</Link>
                 </li>
                 <li>
                   <a href="http://linkedin.com/in/linjimmy91" target="blank">
