@@ -51,7 +51,7 @@ body a {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.507);
+  background-color: var(--text);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -74,11 +74,11 @@ body a {
   color:var(--text);
   animation: typewriter 2s steps(20, end);
   border-right: 2px rgba(0, 0, 0, 0) solid;
-  font-size: 12px;
+  font-size: 16px;
   overflow: hidden;
 }
 .hailing p {
-  max-height: 14.4px;
+  max-height: 18px;
 }
 
 .hailing-button{
@@ -121,23 +121,23 @@ body a {
 
 .homeText1,.homeText2 {
   max-height: 20px;
-  max-width: 100px;
+  margin-top: 20px;
+  font-size: 24px;
   color: var(--title);
+  overflow: hidden;
   animation: typewriter 1.5s steps(60, end) 0.5s 1 both;
   overflow: hidden;
+  font-family:'Times New Roman', Times, serif;
 }
 
 
 .home-languages1, .home-languages2{
   max-height: 20px;
-  max-width: 200px;
+  font-size: 16px;
   color: var(--text);
   animation: typewriter 2s steps(60, end) 0.5s 1 both;
   overflow: hidden;
-}
-
-.home-languages2{
-  max-width: 250px;
+  padding-left: 10px;
 }
 .linkedin-icon, .github-icon{
   width: 18px;
@@ -145,8 +145,9 @@ body a {
   color: var(--text);
 }
 .title {
-  color: rgb(255, 255, 255);
-  padding-bottom: 10px;
+  color: white;
+  padding-bottom: 20px;
+  font-family:'Times New Roman', Times, serif;
 }
 
 @keyframes typewriter{
@@ -409,9 +410,7 @@ padding: 20px;
   padding: 2px;
   flex: 1;
 }
-.species-title{
-  font-size: 16px;
-}
+
 .progress-bar-container{
   border: 2px var(--text) solid;
   height: 20px;
@@ -470,7 +469,7 @@ padding: 20px;
 }
 .projects-ploober-container, .projects-commerce-container p{
   color: var(--text);
-  font-size: 12px;
+  font-size: 16px;
   max-height: 278px;
 }
 .ploober-gif {
